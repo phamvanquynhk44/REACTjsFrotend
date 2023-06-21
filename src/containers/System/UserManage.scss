@@ -46,3 +46,25 @@
         color           : rgb(214, 24, 21) !important;
     }
 }
+
+.modal-user-container{
+  .modal-content{
+    .modal-header{
+      button{
+        background-color: transparent !important;
+        color: white;
+        border: none;
+        font-size: 30px;
+      }
+    }
+  }
+  .form-row{
+    display: flex;
+    gap: 10px;
+  }
+
+  .form-group {
+    margin-bottom: 1rem;
+  }
+
+}
