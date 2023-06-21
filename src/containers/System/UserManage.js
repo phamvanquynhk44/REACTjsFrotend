@@ -40,8 +40,7 @@ class UserManage extends Component {
                         <th>Fullname</th>
                         <th>Address</th>
                         <th>Actions</th>
-                    </tr>
-                    
+                    </tr>  
                         {arrUsers && arrUsers.map((item, index) =>{
                             return(
                                 <tr>
@@ -56,7 +55,6 @@ class UserManage extends Component {
                             )
                         })
                         }
-
                     </table>
                 </div>
             </div>
