@@ -7,7 +7,12 @@ class ModalUser extends Component {
     constructor(props){
         super(props);
         this.state ={
-
+            email: '',
+            password: '',
+            fullname: '',
+            username:'',
+            phone:'',
+            address:'',
         }
     }
 
@@ -16,6 +21,35 @@ class ModalUser extends Component {
 
     toggle = () =>{
        this.props.toggleFomatPerent();
+    }
+
+    handleOnChageInput = (event,id)=>{
+        let copyState={...this.state};
+        copyState[id]=event.target.value;
+        this.setState({
+            ...copyState
+        })
+    }
+
+    checkValidateInput = () => {
+        let isValid = true;
+        let arrInput = ['email','password','fullname','username','phone','address'];
+        for (let i=0; i<arrInput.length; i++){
+            if(!this.state[arrInput[i]]){
+                isValid = false;
+                alert('Missing paramater :' + arrInput[i]);
+                break;
+            }
+
+        }
+        return isValid;
+    }
+
+    handleAddNewUser = () => {
+        let isValid =  this.checkValidateInput();
+        if(isValid === true){
+            this.props.createNewuser(this.state);
+        }
     }
 
 
@@ -31,73 +65,100 @@ class ModalUser extends Component {
             <ModalHeader toggle={()=>{this.toggle()}}>Create new user</ModalHeader>
             <ModalBody>
                 <div className='container'>
-                    <div className='row'>
-                    <form action="#" method="post">  
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
+                    <div className='row'>  
+                        <div className="form-row">
+                            <div className="form-group col-md-6">
                                 <label for="email">Email</label>
-                                <input type="email" class="form-control" id="email" name="email" placeholder="Email"/>
+                                <input type="email" 
+                                onChange={(event)=>{this.handleOnChageInput(event , "email")}}
+                                value={this.state.email}
+                                className="form-control" 
+                                id="email" name="email" 
+                                placeholder="Email"/>
                             </div>
-                            <div class="form-group col-md-6">
+                            <div className="form-group col-md-6">
                                 <label for="password">Password</label>
-                                <input type="password" class="form-control" id="password" name="password" placeholder="Password"/>
+                                <input type="password" 
+                                onChange={(event)=>{this.handleOnChageInput(event , "password")}}
+                                value={this.state.password}
+                                className="form-control" 
+                                id="password" 
+                                name="password" 
+                                placeholder="Password"/>
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div className="form-group">
                             <label for="Fullname">Fullname</label>
-                            <input type="text" class="form-control" id="Fullname" name="fullname" placeholder="fullname"/>
+                            <input type="text" 
+                            onChange={(event)=>{this.handleOnChageInput(event , "fullname")}}
+                            value={this.state.fullname}
+                            className="form-control" 
+                            id="Fullname" 
+                            name="fullname" 
+                            placeholder="fullname"/>
                         </div>
-                        <div class="form-group">
+                        <div className="form-group">
                             <label for="Username">Username</label>
-                            <input type="text" class="form-control" id="Username" name="username" placeholder="username"/>
+                            <input type="text" 
+                            onChange={(event)=>{this.handleOnChageInput(event , "username")}}
+                            value={this.state.username}
+                            className="form-control" 
+                            id="Username" 
+                            name="username" 
+                            placeholder="username"/>
                         </div>
-                        <div class="form-group">
+                        <div className="form-group">
                             <label for="Phone">Phone</label>
-                            <input type="number" class="form-control" id="Phone" name="phone" placeholder="Phone"/>
+                            <input type="number" 
+                            onChange={(event)=>{this.handleOnChageInput(event , "phone")}}
+                            value={this.state.phone}
+                            className="form-control" 
+                            id="Phone" name="phone" 
+                            placeholder="Phone"/>
                         </div>
-                        <div class="form-group">
+                        <div className="form-group">
                         <label for="Address">Address</label>
-                        <input type="text" class="form-control" id="Address" name="address" placeholder="address"/>
+                        <input type="text" 
+                        onChange={(event)=>{this.handleOnChageInput(event , "address")}}
+                        value={this.state.address}
+                        className="form-control" 
+                        id="Address" 
+                        name="address" 
+                        placeholder="address"/>
                         </div>
-                        <div class="form-row">
-                        <div class="form-group col-md-2">
+                        <div className="form-row">
+                        <div className="form-group col-md-4">
                             <label for="Role">Role</label>
-                            <select id="Role" name="roleId" class="form-control">
+                            <select id="Role" name="roleId" className="form-control">
                             <option value="0">Top Admin</option>
                             <option value="1">Admin</option>
                             <option value="2">User</option>
                             </select>
                         </div>
-                        <div class="form-group col-md-1">
+                        <div className="form-group col-md-4">
                             <label for="Gender">Gender</label>
-                            <select id="Gender" name="gender" class="form-control">
+                            <select id="Gender" name="gender" className="form-control">
                             <option value="1">Male</option>
                             <option value="0">Female</option>
                             </select>
                         </div>
-                        <div class="form-group col-md-1">
+                        <div className="form-group col-md-4">
                             <label for="Status">Status</label>
-                            <select id="Status" name="status" class="form-control">
+                            <select id="Status" name="status" className="form-control">
                             <option value="1">On</option>
                             <option value="0">Off</option>  
                             </select>
                         </div>
                         </div>
-                        <div class="form-group">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="gridCheck"/>
-                            <label class="form-check-label" for="gridCheck">
-                            Check me out
-                            </label>
-                        </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary px-3">Sign in</button>
-                    </form>
                     </div>
                 </div>
             </ModalBody>
             <ModalFooter>
-            <Button color="primary" className='px-3' onClick={()=>{this.toggle()}}>Save user</Button>{' '}
+            <Button 
+            color="primary" 
+            className='px-3' 
+            onClick={()=>{this.handleAddNewUser()}}
+            >Add new</Button>{' '}
             <Button color="secondary" className='px-3' onClick={()=>{this.toggle()}}>Close</Button>
             </ModalFooter>
             </Modal>
