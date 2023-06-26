@@ -12,13 +12,9 @@ class ModalEditUser extends Component {
             id: '',
             email: '',
             password: '',
-            fullname: '',
-            username:'',
-            phone:'',
+            firstName: '',
+            lastName:'',
             address:'',
-            roleId: '',
-            gender: '',
-            status: '',
         }
 
     }
@@ -29,13 +25,9 @@ class ModalEditUser extends Component {
                 id: user.id,
                 email: user.email,
                 password: '1',
-                fullname: user.fullname,
-                username: user.username,
-                phone: user.phone,
+                firstName: user.firstName,
+                lastName: user.lastName,
                 address: user.address,
-                roleId: user.roleId,
-                gender: user.gender,
-                status: user.status,
             })
         }
         console.log('didmout edit modal', this.props.currentUser)
@@ -55,7 +47,7 @@ class ModalEditUser extends Component {
 
     checkValidateInput = () => {
         let isValid = true;
-        let arrInput = ['email','password','fullname','username','phone','address'];
+        let arrInput = ['email','password','firstName','lastName','address'];
         for (let i=0; i<arrInput.length; i++){
             if(!this.state[arrInput[i]]){
                 isValid = false;
@@ -113,33 +105,24 @@ class ModalEditUser extends Component {
                                 </div>
                             </div>
                             <div className="form-group">
-                                <label for="Fullname">Fullname</label>
+                                <label for="FirstName">FirstName</label>
                                 <input type="text" 
-                                onChange={(event)=>{this.handleOnChageInput(event , "fullname")}}
-                                value={this.state.fullname}
+                                onChange={(event)=>{this.handleOnChageInput(event , "firstName")}}
+                                value={this.state.firstName}
                                 className="form-control" 
-                                id="Fullname" 
-                                name="fullname" 
-                                placeholder="fullname"/>
+                                id="FirstName" 
+                                name="firstName" 
+                                placeholder="FirstName"/>
                             </div>
                             <div className="form-group">
-                                <label for="Username">Username</label>
+                                <label for="LastName">LastName</label>
                                 <input type="text" 
-                                onChange={(event)=>{this.handleOnChageInput(event , "username")}}
-                                value={this.state.username}
+                                onChange={(event)=>{this.handleOnChageInput(event , "lastName")}}
+                                value={this.state.lastName}
                                 className="form-control" 
-                                id="Username" 
-                                name="username" 
-                                placeholder="username"/>
-                            </div>
-                            <div className="form-group">
-                                <label for="Phone">Phone</label>
-                                <input type="number" 
-                                onChange={(event)=>{this.handleOnChageInput(event , "phone")}}
-                                value={this.state.phone}
-                                className="form-control" 
-                                id="Phone" name="phone" 
-                                placeholder="Phone"/>
+                                id="LastName" 
+                                name="lastName" 
+                                placeholder="LastName"/>
                             </div>
                             <div className="form-group">
                             <label for="Address">Address</label>
@@ -150,49 +133,6 @@ class ModalEditUser extends Component {
                             id="Address" 
                             name="address" 
                             placeholder="address"/>
-                            </div>
-                            <div className="form-row">
-                            <div className="form-group col-md-4">
-                                <label for="Role">Role</label>
-                                <select disabled id="Role" name="roleId" className="form-control">
-                                <option 
-                                    onChange={(event)=>{this.handleOnChageInput(event , "roleId")}}
-                                    value={this.state.roleId}
-                                    >
-                                {this.state.roleId === 0 ? 'Top Admin' : this.state.roleId === 1 ? 'Admin' : this.state.roleId === 2 ? 'User': null}
-                                </option>
-                                </select>
-                            </div>
-                            <div className="form-group col-md-4">
-                                <label for="Gender">Gender</label>
-                                <select 
-                                    onChange={(event)=>{this.handleOnChageInput(event , "gender")}}
-                                    value={this.state.gender}
-                                id="Gender" name="gender" className="form-control">
-                                <option 
-                                    value={this.state.gender}
-                                >
-                                    {this.state.gender === 1 ? '--- Male ---' : '--- Female ---'}
-                                </option>
-                                <option value="1">Male</option>
-                                <option value="0">Female</option>
-                                </select>
-                            </div>
-                            <div className="form-group col-md-3">
-                                <label for="Status">Status</label>
-                                <select 
-                                    onChange={(event)=>{this.handleOnChageInput(event , "status")}}
-                                    value={this.state.status}
-                                id="Status" name="status" className="form-control">
-                                <option 
-                                    value={this.state.status}
-                                >
-                                    {this.state.status === 1 ? '--- Open ---' : '--- Off ---'}
-                                </option>
-                                <option value="1">On</option>
-                                <option value="0">Off</option>  
-                                </select>
-                            </div>
                             </div>
                         </div>
                     </div>

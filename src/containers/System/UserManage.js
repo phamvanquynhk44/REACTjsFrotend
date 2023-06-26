@@ -140,13 +140,9 @@ class UserManage extends Component {
                     <tbody>
                         <tr>
                             <th>Email</th>
-                            <th>Fullname</th>
-                            <th>Username</th>
-                            <th>Phone</th>
+                            <th>firstName</th>
+                            <th>LastName</th>
                             <th>Address</th>
-                            <th>RoleId</th>
-                            <th>Gender</th>
-                            <th>Status</th>
                             <th>Actions</th>
                         </tr>  
                     
@@ -154,13 +150,9 @@ class UserManage extends Component {
                                 return(
                                     <tr key={index}>
                                     <td>{item.email}</td>
-                                    <td>{item.fullname}</td>
-                                    <td>{item.username}</td>
-                                    <td>{item.phone}</td>
-                                    <td>{item.address}</td>
-                                    {item.roleId===0 ?  <td>{'Top Admin'}</td>: item.roleId===1 ? <td>{'Admin'}</td> : item.roleId===2 ? <td>{'User'}</td> : null} 
-                                    {item.gender===1 ?  <td>{'Male'}</td>   : <td>{'Female'}</td>}  
-                                    {item.status===1 ?  <td>{'Open'}</td>   : <td>{'Close'}</td>}    
+                                    <td>{item.firstName}</td>
+                                    <td>{item.lastName}</td>
+                                    <td>{item.address}</td>  
                                     <td>
                                         <button 
                                         className='btn-edit'

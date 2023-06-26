@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": "../../../../../TTTN/node-tttn-phamvanquynh"
+		},
+		{
+			"path": "C:/xampp/htdocs/phamvanquynh2120030166"
+		},
+		{
+			"path": "../../../../../DA TỰ LÀM/TRANG-WEB-TU-LAM"
+		},
+		{
+			"path": "../../../../NODEJS"
+		},
+		{
+			"path": "../../.."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "phamvanquynh2120030166"
+	}
+}
