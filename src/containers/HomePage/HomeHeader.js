@@ -9,6 +9,7 @@ class HomeHeader extends Component {
         let linkToRedirect = isLoggedIn ? '/system/user-manage' : '/home';
 
         return (
+            <React.Fragment>
             <div className='home-header-container'>
                 <div className='home-header-content'>
                    <div className='left-content'>
@@ -36,11 +37,48 @@ class HomeHeader extends Component {
                    <div className='right-content'>
                         <div className='support'><i class="far fa-question-circle"></i> Hỗ trợ</div>
                         <div className='flag'>VN</div>
-
                    </div>
-
                 </div>
             </div>
+            <div className='home-header-banner'>
+                <div className='content-up'>
+                    <div className='title1'>NỀN TẢNG Y TẾ</div>
+                    <div className='title2'>CHĂM SÓC SỨC KHỎE TOÀN DIỆN</div>
+                    <div className='search'>
+                        <i className="fas fa-search"></i>
+                        <input type='text' placeholder='Tìm kiếm'/>
+                    </div>
+                </div>
+                <div className='content-down'>                   
+                    <div className='options'>
+                        <div className='option-child'>
+                            <div className='icon-child'><i className="fas fa-hospital-alt"></i></div>
+                            <div className='text-child'>Khám chyên khoa</div>
+                        </div>
+                        <div className='option-child'>
+                            <div className='icon-child'><i className="fas fa-mobile-alt"></i></div>
+                            <div className='text-child'>Khám từ xa</div>
+                        </div>
+                        <div className='option-child'>
+                            <div className='icon-child'><i className="fas fa-stethoscope"></i></div>
+                            <div className='text-child'>Khám tổng quát</div>
+                        </div>
+                        <div className='option-child'>
+                            <div className='icon-child'><i className="fas fa-vial"></i></div>
+                            <div className='text-child'>Xét nghiệm y học</div>
+                        </div>
+                        <div className='option-child'>
+                            <div className='icon-child'><i className="fas fa-truck-moving"></i></div>
+                            <div className='text-child'>Sức khoẻ tinh thần</div>
+                        </div>
+                        <div className='option-child'>
+                            <div className='icon-child'><i className="fas fa-procedures"></i></div>
+                            <div className='text-child'>Khám Nha khoa</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </React.Fragment>
         );
     }
 
