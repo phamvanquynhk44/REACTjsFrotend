@@ -1,5 +1,5 @@
 .home-header-container{
-    height: 60px;
+    height: 90px;
     width: 100%;
     padding: 0 20px;
 
@@ -9,15 +9,14 @@
         display: flex;
 
         .left-content{
-            width: 25%;
+            width: 20%;
             display: flex;
             align-items: center;
-            border: 1px solid green;
+            margin-left: 170px;
 
             .header-logo{
-                background: url(../../assets/logo.svg) center center no-repeat;
-                height: 100%;
-                width: 100%;
+                height: 45%;
+                width: 70%;
                 cursor: pointer;
             }
 
@@ -28,8 +27,7 @@
             }
         }
         .center-content{
-            width: 50%;
-            border: 1px solid orange;
+            width: 55%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -43,27 +41,55 @@
         }
         .right-content{
             width: 25%;
-            border: 1px solid black;
             display: flex;
-            justify-content: center;
+            justify-content: flex-end;
             align-items: center;
+
+            .support{
+                padding-right: 50px;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+
+                i{
+                    font-size: 15px;
+                    margin-right: 5px;
+                }
+            }
+
+            .language-vi{
+                cursor: pointer;
+
+                &.active{
+                    color: orange;
+                }
+            }
+
+            .language-en{
+                margin: 0 10px;
+                cursor: pointer;
+
+                &.active{
+                    color: blue;
+                }
+            }
         }
     }
 }
 
 .home-header-banner{
     background: url(../../assets/header-background.jpg);
-    height: 600px;
+    height: 700px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     display: flex;
     flex-direction: column;
 
-    .content-up{
-        border: 1px solid red;
+    .content-up{   
+        background-image: linear-gradient(rgba(0, 0, 0, 0.25),rgba(255, 255, 255, 0.1));
         padding-top: 46px;
-        height: 50%;
+        height: 65%;
 
         .title1{
             text-align: center;
@@ -107,8 +133,12 @@
     }
 
     .content-down{
-        border: 1px solid green;
-        height: 50%;
+        height: 35%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        background-image: linear-gradient(rgba(255, 255, 255, 0.1),rgba(255, 255, 255, 0.9),rgba(255, 255, 255, 1));
+
 
         .options{   
             text-align: center;
@@ -118,7 +148,6 @@
             
             .option-child{
                 width: 100px;
-                border: 1px solid red;
                   
                 .icon-child{
                     background: white;
